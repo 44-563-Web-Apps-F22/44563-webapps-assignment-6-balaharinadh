@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 6 JavaScript</title>
+     </head>
+
+<body>
+
+<h1>Musician guess by Bala Harinadh</h1>
+<h2>Getting input</h2>
+<div class="container">
+<form>
+    <label for="form1_musician">Enter the secret musician name</label>
+    <input type ="password" id="form1_musician" name="form1_musician" value ="John Lennon" > <br>
+
+    <label for="form1_hari">Guess the Musician</label>
+    <input type ="text" id="form1_hari" name="form1_hari" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()"  value="Check the guess">
+</form>
+</div>
+<div class="container border">
+<p id="result">This text will be replaced </p>
+</div>
+<div class="container">
+    <img src="./images/Alderflies.png" alt="Alderflies" id="imgsrc" height="100" width="100" onclick="swapImage()">
+</div>
+<script> 
+let correct = 0;
+let wrong = 0;
+
+function checkGuess(){
+    console.log("Fetching Values")
+    musician = document.getElementById("form1_musician").value
+    Hari = document.getElementById("form1_hari").value
+
+    output = document.getElementById("result")
+    if(musician == Hari){
+        correct = correct+1
+       alert("You got it right")
+       
+        output.innerHTML= "correct: "+correct+" "+"wrong: "+wrong
+    }else{
+        wrong = wrong+1
+        alert("Wrong Musician")
+      
+        output.innerHTML= "correct: "+correct+" "+"wrong: "+wrong 
+    }
+}
+</script>
+<script>
+let useImage = 1;
+            function swapImage() {
+                switch (useImage) {
+                    case 1:
+                    document.getElementById("imgsrc").src = "./images/Alderflies.png"
+                        useImage = 2
+                        break
+                    case 2:
+                    document.getElementById("imgsrc").src = "./images/Antilions.png"
+                        useImage = 3
+                        break
+                    case 3:
+                    document.getElementById("imgsrc").src = "./images/praying minds.png"
+                        useImage = 1
+                        break
+                    default:
+                        break
+                }
+            }
+
+</script>
+
+</body>
+</html> 
