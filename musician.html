@@ -39,6 +39,7 @@
 <script> 
 let correct = 0;
 let wrong = 0;
+count=0;
 
 function checkGuess(){
     console.log("Fetching Values")
@@ -47,16 +48,27 @@ function checkGuess(){
 
     output = document.getElementById("result")
     if(musician == Hari){
+        count=0;
         correct = correct+1
        alert("You got it right")
        
         output.innerHTML= "correct: "+correct+" "+"wrong: "+wrong
     }else{
+        count=count+1
         wrong = wrong+1
         alert("Wrong Musician")
-      
-        output.innerHTML= "correct: "+correct+" "+"wrong: "+wrong 
     }
+    if(count>=3){
+        if(wrong>=3){
+            addAlert();
+        }
+    }
+    output.innerHTML= "correct: "+correct+" "+"wrong: "+wrong 
+
+    function addAlert(){
+        alert("Sorry, game over.");
+    }
+
 }
 </script>
 <script>
